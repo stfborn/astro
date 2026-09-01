@@ -149,22 +149,19 @@ orion_stars = {
 # ============================================================
 
 connections = [
-
     ("Betelgeuse", "Bellatrix"),
+    ("Betelgeuse", "Meissa"),
+    ("Meissa", "Bellatrix"),
 
     ("Bellatrix", "Mintaka"),
     ("Mintaka", "Alnilam"),
     ("Alnilam", "Alnitak"),
 
-    ("Betelgeuse", "Alnilam"),
-    ("Alnilam", "Saiph"),
+    ("Betelgeuse", "Alnitak"),
+    ("Alnitak", "Saiph"),
 
-    ("Bellatrix", "Rigel"),
-    ("Rigel", "Saiph"),
-
-    ("Betelgeuse", "Meissa"),
+    ("Mintaka", "Rigel"),
 ]
-
 
 # ============================================================
 # ZEITPUNKTE
