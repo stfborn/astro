@@ -371,8 +371,6 @@ background_scatter = ax.scatter(
 
     color="white",
 
-    alpha=0.35,
-
     linewidths=0
 )
 
@@ -889,11 +887,8 @@ def update(frame):
 
 
     background_sizes = np.maximum(
-
-        0.5,
-
-        7.0 -
-        background_magnitudes
+    1.0,
+    5.0 - 0.5 * background_magnitudes
     )
 
 
@@ -913,6 +908,21 @@ def update(frame):
 
         background_sizes[visible]
     )
+
+    background_alpha = np.clip(
+    0.30 + 0.12 * (6.0 - background_magnitudes[visible]),
+    0.30,
+    0.90
+    )
+
+    background_colors = np.column_stack((
+    np.ones(np.sum(visible)),
+    np.ones(np.sum(visible)),
+    np.ones(np.sum(visible)),
+    background_alpha
+    ))
+
+    background_scatter.set_facecolors(background_colors)
 
 
     # ========================================================
