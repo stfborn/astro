@@ -24,7 +24,7 @@ ELEVATION = 90
 START = datetime(2026, 8, 15, 0, 0)
 END = datetime(2026, 12, 31, 23, 0)
 
-STEP = timedelta(minutes=15)
+STEP = timedelta(minutes=2)
 
 
 # ============================================================
