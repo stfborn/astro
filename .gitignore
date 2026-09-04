@@ -1,2 +1,5 @@
 de421.bsp 
 hip_main.dat
+__pycache__/
+*.py[cod]
+.venv/
