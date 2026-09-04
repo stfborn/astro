@@ -1250,15 +1250,6 @@ update(
 )
 
 
-plt.title(
-
-    "Orion über Mainz – Zoomdarstellung",
-
-    fontsize=18,
-
-    color="white"
-)
-
 
 plt.subplots_adjust(
 
