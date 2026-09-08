@@ -5,3 +5,8 @@ naif0012.tls
 __pycache__/
 *.py[cod]
 .venv/
+/earth_000101_261203_260906.bpc
+/orion_hipparcos_2_minuten.py
+/pck00011.tpc
+/solar_system_erdmittelpunkt.py
+/solar_system_mainz.py
