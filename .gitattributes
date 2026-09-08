@@ -1,0 +1,3 @@
+Aitoffprojektionen/*.bsp filter=lfs diff=lfs merge=lfs -text
+Animation_Sternbilder/*.bsp filter=lfs diff=lfs merge=lfs -text
+Animation_Sternbilder/*.dat filter=lfs diff=lfs merge=lfs -text
