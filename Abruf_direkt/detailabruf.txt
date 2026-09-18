@@ -1,0 +1,78 @@
+#Aufruf
+python detailabruf.py --format png Betelgeuse        		# nur PNG
+python detailabruf.py --format fits Betelgeuse       		# nur FITS
+python detailabruf.py --format both Betelgeuse       		# beides explizit
+python detailabruf.py Betelgeuse                     		# beides (Default Einzelobjekt)
+python detailabruf.py --constellation Orion          		# nur PNG (Default Konstellation)
+python detailabruf.py --constellation Orion --format both  	# beides für alle Sterne
+
+
+# Erklärung der Ausgabefelder
+
+## Namensauflösung
+
+| Feld | Erklärung |
+|------|-----------|
+| **Aufgelöst via Sesame / VizieR** | Welcher Dienst den Objektnamen in Koordinaten umgewandelt hat. Sesame ist der primäre CDS-Dienst, VizieR der Fallback. |
+| **RA** | Rektaszension – die „Länge" am Himmel, gemessen in Grad (0–360°). Entspricht dem Längengrad auf der Erde. |
+| **Dec** | Deklination – die „Breite" am Himmel, gemessen in Grad (−90° bis +90°). Entspricht dem Breitengrad auf der Erde. |
+
+---
+
+## SIMBAD-Statistik
+
+### Identifikation
+
+| Feld | Erklärung |
+|------|-----------|
+| **Hauptbezeichnung** | Offizieller Simbad-Name des Objekts, z.B. `* alf Ori` für Betelgeuse (Alpha Orionis). |
+| **Objekttyp** | Simbad-Kurzcode für den Typ, z.B. `s*r` = Roter Überriese, `SB*` = Spektroskopischer Doppelstern, `*` = Einzelstern. |
+
+### Position
+
+| Feld | Erklärung |
+|------|-----------|
+| **RA / Dec** | Präzise Koordinaten in Dezimalgrad im ICRS-System (International Celestial Reference System), dem modernen Himmelskoordinatensystem. |
+
+### Spektrum & Helligkeit
+
+| Feld | Erklärung |
+|------|-----------|
+| **Spektraltyp** | Klassifizierung nach Temperatur und Leuchtkraft. Buchstabe = Temperaturklasse (O, B, A, F, G, K, M – von heiß nach kühl). Ziffer = Unterklasse. Zusatz = Leuchtkraftklasse (z.B. `Ia` = heller Überriese, `V` = Hauptreihenstern). |
+| **Helligkeit (V)** | Scheinbare Helligkeit im visuellen Band (sichtbares Licht). Kleinere Werte = heller. Negative Werte sind sehr hell (Sirius: −1.46). |
+| **Helligkeit (B)** | Scheinbare Helligkeit im blauen Band. Vergleich B−V gibt Auskunft über die Farbe: positiv = rötlich, negativ = bläulich. |
+
+### Entfernung
+
+| Feld | Erklärung |
+|------|-----------|
+| **Parallaxe** | Winkelverschiebung des Sterns bei Beobachtung von gegenüberliegenden Punkten der Erdumlaufbahn, gemessen in Millibogensekunden (mas). Größere Parallaxe = näher. |
+| **Entfernung** | Aus der Parallaxe berechnet: 1000 ÷ Parallaxe (mas) = Parsec. 1 Parsec = 3,26 Lichtjahre. |
+| **Abs. Helligkeit** | Wie hell der Stern wäre, wenn er genau 10 Parsec (32,6 Lichtjahre) entfernt wäre. Ermöglicht den direkten Vergleich der echten Leuchtkraft zwischen Sternen. |
+
+### Bewegung
+
+| Feld | Erklärung |
+|------|-----------|
+| **Eigenbewegung** | Scheinbare Bewegung des Sterns am Himmel pro Jahr, gemessen in Millibogensekunden (mas/yr). Getrennt nach RA (Ost-West) und Dec (Nord-Süd). Negatives Vorzeichen = westliche bzw. südliche Richtung. Der Gesamtvektor gibt die kombinierte Bewegung an. |
+| **Radialgeschwindigkeit** | Geschwindigkeit des Sterns auf uns zu (negativ) oder von uns weg (positiv), in km/s. Bezugspunkt ist das **Baryzentrum des Sonnensystems** (nicht die Erde), da die Erdposition jahresabhängig schwankt. |
+| **v·sin(i)** | Rotationsgeschwindigkeit des Sterns an seinem Äquator, multipliziert mit dem Sinus des Neigungswinkels seiner Rotationsachse. Da der Neigungswinkel meist unbekannt ist, ist dies eine untere Schranke der echten Rotationsgeschwindigkeit. |
+
+### Physikalische Eigenschaften
+
+| Feld | Erklärung |
+|------|-----------|
+| **Metallizität [Fe/H]** | Verhältnis von Eisen zu Wasserstoff im Vergleich zur Sonne (logarithmisch). 0.0 = sonnenähnlich, positiv = metallreicher als die Sonne, negativ = metallarmer. Gibt Aufschluss über Alter und Entstehungsgeschichte. |
+| **Effektivtemperatur** | Oberflächentemperatur des Sterns in Kelvin (K). Zur Orientierung: Sonne ≈ 5.778 K, Betelgeuse ≈ 3.600 K (rot/kühl), Sirius ≈ 9.300 K (weiß-blau/heiß). |
+| **Winkelausdehnung** | Scheinbarer Durchmesser des Objekts am Himmel in Bogensekunden (arcsec). Nur bei sehr großen oder nahen Objekten messbar (z.B. Betelgeuse ist einer der wenigen Sterne mit messbarem Scheibchen). |
+
+---
+
+## Bilddatei
+
+| Feld | Erklärung |
+|------|-----------|
+| **Sichtfeld (FOV)** | Der abgebildete Himmelsausschnitt in Grad. Für Nebel/Galaxien typisch 3°, für Einzelsterne 0.1–0.5°, für Konstellationen 10° oder mehr. |
+| **DSS2** | Digitized Sky Survey 2 – ein digitalisierter fotografischer Himmelskatalog, aufgenommen mit bodengebundenen Teleskopen. Liefert realistische Fotos des Himmels. |
+| **PNG** | Vorschaubild, direkt anzeigbar. |
+| **FITS** | Wissenschaftliches Bildformat der Astronomie mit vollen Rohdaten und Metadaten (Koordinaten, Belichtung etc.). Kann z.B. mit DS9 oder Astropy geöffnet werden. |
